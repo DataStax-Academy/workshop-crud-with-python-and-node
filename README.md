@@ -32,11 +32,9 @@ Make sure to chose a password with minimum 8 characters, containing upper and lo
 
 - [Registration Page](https://dtsx.io/workshop)
 
-![Registration Image](images/astra-create-register.png?raw=true)
-
 - [Authentication Page](https://dtsx.io/workshop)
 
-![Login Image](images/astra-create-login.png?raw=true)
+![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/login-1000.png?raw=true)
 
 
 **✅ Step 1b. Choose the free plan and select your region**
