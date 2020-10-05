@@ -76,5 +76,95 @@ Now you can select to connect, to park the database, to access CQL console or St
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/summary-1000.png?raw=true)
 
 
+**✅ Step 1e. Connect via CQL console and insert schema**
+
+Ok, now that you have a database created the next step is to create a table to work with. 
+
+**✅ Step 2a. Navigate to the CQL Console and login to the database**
+
+In the Summary screen for your database, select **_CQL Console_** from the top menu in the main window. This will take you to the CQL Console with a login prompt.
+
+<img width="1000" alt="Screenshot 2020-09-30 at 13 51 55" src="https://user-images.githubusercontent.com/20337262/94687448-2aff1c00-0324-11eb-8aa6-516185d01ce8.png">
+
+Enter in the credentials we used earlier to create the **_killrvideo_** database. If you followed the instructions earlier this should be **_KVUser_** and **_KVPassword1_**. If you already created the **_killrvideo_** database at some point before this workshop and used different credentials, just use those instead.
+
+<img width="1000" alt="Screenshot 2020-09-30 at 13 53 43" src="https://user-images.githubusercontent.com/20337262/94687593-613c9b80-0324-11eb-8db8-35a76a786b18.png">
+
+Navigate to the keyspace you want to use for this exercise:
+
+```
+use ...
+```
+
+Now insert the schema:
+
+```
+CREATE TYPE IF NOT EXISTS location_udt (
+    x_coordinate double,
+    y_coordinate double,
+    z_coordinate double
+);
+
+
+CREATE TABLE IF NOT EXISTS spacecraft_journey_catalog (
+    spacecraft_name text,
+    journey_id timeuuid,
+    active boolean,
+    end timestamp,
+    start timestamp,
+    summary text,
+    PRIMARY KEY (spacecraft_name, journey_id)
+);
+
+
+CREATE TABLE IF NOT EXISTS spacecraft_pressure_over_time (
+    spacecraft_name text,
+    journey_id timeuuid,
+    reading_time timestamp,
+    pressure double,
+    pressure_unit text,
+    PRIMARY KEY ((spacecraft_name, journey_id), reading_time)
+);
+
+CREATE TABLE IF NOT EXISTS spacecraft_speed_over_time (
+    spacecraft_name text,
+    journey_id timeuuid,
+    reading_time timestamp,
+    speed double,
+    speed_unit text,
+    PRIMARY KEY ((spacecraft_name, journey_id), reading_time)
+);
+
+CREATE TABLE IF NOT EXISTS spacecraft_temperature_over_time (
+    spacecraft_name text,
+    journey_id timeuuid,
+    reading_time timestamp,
+    temperature double,
+    temperature_unit text,
+    PRIMARY KEY ((spacecraft_name, journey_id), reading_time)
+);
+
+CREATE TABLE IF NOT EXISTS spacecraft_location_over_time (
+    spacecraft_name text,
+    journey_id timeuuid,
+    reading_time timestamp,
+    location frozen<location_udt>,
+    location_unit text,
+    PRIMARY KEY ((spacecraft_name, journey_id), reading_time)
+);
+```
+
+Check that all tables were created:
+
+```
+describe tables;
+```
+
+Expected output:
+
+```
+```
+
+
 [🏠 Back to Table of Contents](#table-of-contents)
 
