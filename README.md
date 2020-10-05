@@ -165,6 +165,7 @@ Expected output:
 ```
 ```
 
+Perfect, this wraps up the database preparations. Launch Gitpod and start coding!
 
 [🏠 Back to Table of Contents](#table-of-contents)
 
