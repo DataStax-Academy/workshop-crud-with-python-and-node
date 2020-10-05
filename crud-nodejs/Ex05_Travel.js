@@ -21,7 +21,9 @@ async function executeQueries() {
     }
 
     var i;
-    for (i = 1; i <= 50; i++) {
+    var total = 1000;   
+
+    for (i = 1; i <= total; i++) {
         var speed        = 300+i+Math.random()*10
         var pressure     = Math.random()*20
         var temperature  = Math.random()*300
@@ -43,8 +45,8 @@ async function executeQueries() {
         { query: insertLocation, params: [spacecraft_name, journey_id, location,readingTime,'AU' ] }
         ]
 
-            await sleep(1000)
-            console.log("{%i/50} - Travelling..",i)
+            await sleep(10)
+            console.log("{%i/%i} - Travelling..",i, total)
 
             const result = await connection.client.batch(myBatch, { prepare: true })
             .then(function (result){
