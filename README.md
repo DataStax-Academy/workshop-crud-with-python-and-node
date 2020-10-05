@@ -80,8 +80,6 @@ Now you can select to connect, to park the database, to access CQL console or St
 
 Ok, now that you have a database created the next step is to create a table to work with. 
 
-**✅ Step 2a. Navigate to the CQL Console and login to the database**
-
 In the Summary screen for your database, select **_CQL Console_** from the top menu in the main window. This will take you to the CQL Console with a login prompt.
 
 <img width="1000" alt="Screenshot 2020-09-30 at 13 51 55" src="https://user-images.githubusercontent.com/20337262/94687448-2aff1c00-0324-11eb-8aa6-516185d01ce8.png">
