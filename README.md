@@ -7,8 +7,8 @@ It doesn't matter if you join our workshop live or you prefer to do at your own 
 - Materials used during presentations
 - Hands-on exercises
 - Workshop videos
-  - [First workshop](https://youtu.be/Zf1TTwD4ibQ) [NAM Time]
-  - [Second workshop](https://youtu.be/pVLN6FsUeyo) [IST Time]
+  - [First workshop](https://www.youtube.com/watch?v=3KsR59Y2_Uw) [NAM Time]
+  - [Second workshop](https://www.youtube.com/watch?v=axR9SHYnfMs) [IST Time]
 - [Discord chat](https://bit.ly/cassandra-workshop)
 - [Questions and Answers](https://community.datastax.com/)
 
@@ -20,6 +20,11 @@ It doesn't matter if you join our workshop live or you prefer to do at your own 
 | **1. Create your Astra instance** | [Create your Astra instance](#1-create-your-astra-instance) |
 | **2. Execute CRUD operations with NodeJS** | [CRUD with NodeJS](crud-nodejs/README.md) |
 | **3. Execute CRUD operations with Python** | [CRUD with Python](crud-python/README.md) |
+
+
+**✅  Open Gitpod** : [Gitpod](http://www.gitpod.io/?utm_source=datastax&utm_medium=referral&utm_campaign=datastaxworkshops) is an IDE 100% online based on Eclipse Theia. To initialize your environment simply click on the button below *(CTRL + Click to open in new tab)*
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/DataStax-Academy/workshop-crud-with-python-and-node/)
 
 
 ## 1. Create your Astra instance
