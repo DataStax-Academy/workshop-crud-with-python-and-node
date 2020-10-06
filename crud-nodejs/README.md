@@ -96,7 +96,7 @@ In this exercise we are creating a new journey.
 
 Pay attention to the line where we are creating the journey id. For the purpose of the exercise, we are using a hard-coded time uuid for the journey ID. You can create your own, new one, but remember to update the details in the other exercise files. 
 
-Exercise 3 is using a SimpleStatement for the insert. See line 
+Exercise 3 is using a SimpleStatement for the insert. 
 
 To run:
 
@@ -105,7 +105,8 @@ node Ex03_Insert_Journey.js
 ```
 
 *Expected output:*
-```
+
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex03_Insert_Journey.js 
 ========================================
 Start exercise
@@ -136,7 +137,7 @@ SUCCESS
 
 - **✅ Exercice 5: Inserts using UDTs and Batches**
 
-The table spacecraft_location_over_time is using a user-defined type, location
+The table spacecraft_location_over_time is using a user-defined type, `location`.
 
 With the Node.js driver, you can retrieve and store UDTs using JavaScript objects.
 
@@ -163,13 +164,13 @@ var myBatch = [
 
 and execute the batch here:
 
-```bash
+```javascript
 const result = await connection.client.batch(myBatch, { prepare: true })
 ```
 
 Pay attention to the number of metrics we collect, and modify to your preference.
 
-```
+```javascript
 var total = 1000
 ```
 
@@ -180,7 +181,8 @@ node Ex05_Travel.js
 ```
 
 *Expected output*
-```
+
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex05_Travel.js 
 ========================================
 Start exercise
@@ -207,7 +209,8 @@ node Ex06_Landing.js
 ```
 
 *Expected output*
-```
+
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex06_Landing.js 
 ========================================
 Start exercise
@@ -216,7 +219,7 @@ Journey 84121060-c66e-11ea-a82e-f931183227ac has now landed
 SUCCESS
 ```
 
-- **✅ Exercice 7, Select all, by partition and with smaller page sizes**
+- **✅ Exercice 7, Select all records from a table**
 
 To run:
 
@@ -225,7 +228,8 @@ node Ex07_ListJourney.js
 ```
 
 *Expected output*
-```
+
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex07_ListJourney.js 
 ========================================
 Start exercise
@@ -234,7 +238,7 @@ Start exercise
 SUCCESS
 ```
 
-- **✅ Exercice 8**
+- **✅ Exercice 8, Select by partition**
 
 To run:
 
@@ -243,6 +247,7 @@ node Ex08_Read_Journey.js
 ```
 
 *Expected output*
+
 ```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex08_Read_Journey.js 
 ========================================
@@ -258,7 +263,7 @@ Journey has been found
 SUCCESS
 ```
 
-- **✅ Exercice 9**
+- **✅ Exercice 9, Parsing records**
 
 
 To run:
@@ -268,6 +273,7 @@ node Ex09_ReadMetrics.js
 ```
 
 *Expected output*
+
 ```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex09_ReadMetrics.js 
 ========================================
@@ -287,7 +293,7 @@ idx:999, time=2020-10-06T07:45:47.007Z, value=1300.4481347583946
 SUCCESS
 ```
 
-- **✅ Exercice 10**
+- **✅ Exercice 10, Paging**
 
 To run:
 
@@ -296,6 +302,7 @@ node Ex10_ReadMetrics_Paging.js
 ```
 
 *Expected output*
+
 ```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex10_ReadMetrics_Paging.js 
 ========================================
@@ -307,6 +314,8 @@ idx:2, time=2020-10-06T07:45:33.263Z, value=307.5410825416916
 idx:3, time=2020-10-06T07:45:33.278Z, value=307.0571217360859
 idx:4, time=2020-10-06T07:45:33.293Z, value=304.7200155558933
 idx:5, time=2020-10-06T07:45:33.307Z, value=312.923770628411
+
+
 Page2: 5 items
 idx:5, time=2020-10-06T07:45:33.321Z, value=312.07888261288326
 idx:5, time=2020-10-06T07:45:33.335Z, value=314.71636649213457

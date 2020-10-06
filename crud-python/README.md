@@ -1,44 +1,65 @@
-# Python Workshop Exercises #
+# 🎓🔥 CRUD operations with NodeJS and Python
 
-## Download the bundle to securely connect to your Astra instance ##
+[🏠 Return to HOME](https://github.com/DataStax-Academy/workshop-crud-with-python-and-node)
 
-In the summary page of your Astra instance, select `connect` and then select the `Driver` connection method.
+## Hands-on `PYTHON`
 
-Right-click on `Download Secure Connect Bundle` and save the link location to the clipboard
+### A - Download the bundle to securely connect to your Astra instance
 
+- **✅ Display the summary screen and locate the `connect` button.**
+
+![pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/summary-1000-connect.png?raw=true)
+
+- **✅ On the connect screen pick `drivers`**
+
+![pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/connect-rest-driver.png?raw=true)
+
+- **✅ Right-click on `Download Secure Connect Bundle` and save the link location to the clipboard`**
+
+*Driver page*
+![pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/connect-driver-1000.png?raw=true)
+
+*Get the link*
 <img width="1000" alt="Screenshot 2020-10-05 at 10 09 49" src="https://user-images.githubusercontent.com/20337262/95174774-739a5780-07b2-11eb-86d5-d504a42cf16b.png">
 
-Now in gitpod, navigate to the `crud-python` folder and curl the connection bundle like here:
+- **✅ Now in gitpod, navigate to the `crud-python` folder and curl the connection bundle like here:`**
 
+```bash
+curl -L "<your bundle link here>" > /workspace/workshop-crud-with-python-and-node/crud-python/creds.zip
 ```
+
+*expected output*
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ curl -L "<your bundle link here>" > creds.zip
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100 12354  100 12354    0     0  28797      0 --:--:-- --:--:-- --:--:-- 28797
 ```
 
-You should end up with a file `creds.zip` in the `crud-python` directory.
+You should end up with a file `creds.zip` in the `crud-python` directory. It should be about **12kb**
 
-```
+
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ ls
 creds.zip         Ex02_Connect_to_Cassandra.py  Ex04_TakeOff.py  Ex06_Landing.py      Ex08_Read_Journey.py  Ex10_ReadMetrics_Paging.py
 db_connection.py  Ex03_Insert_Journey.py        Ex05_Travel.py   Ex07_LstJourneys.py  Ex09_ReadMetrics.py
 ```
 
+### B -  Connect your application to Cassandra
 
-## Install the Cassandra driver ##
+- **✅ Install the Cassandra driver**
 
-Ex00
+The `pip` package manager is already install in gitpod, as such you simply have to :
 
-```
+```bash
 pip install cassandra-driver
 ```
 
-## Set up the Connection with Astra ##
+- **✅ Set up the Connection with Astra**
 
 Ex01: Modify the `db_connection.py` file with your credentials:
 
-```
+```python
 # This is the Zip file you downloaded
 SECURE_CONNECT_BUNDLE = '/workspace/workshop-crud-with-python-and-node/crud-python/creds.zip'
 # This is the username, recommended value was KVUser
@@ -49,19 +70,17 @@ PASSWORD = "KVPassword1";
 KEYSPACE = "killrvideo"; 
 ```
 
-## Test the Connection to Astra ##
+- **✅  Test the Connection to Astra**
 
-Ex02
+You simply have to run the test file `Ex02_Connect_to_Cassandra`:
 
-To run:
-
-```
+```bash
 python Ex02_Connect_to_Cassandra.py 
 ```
 
-Expected output:
+*Expected output*
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ python Ex02_Connect_to_Cassandra.py 
 ========================================
 Start exercise
@@ -72,24 +91,25 @@ Closing connection (up to 10s)
 ```
 
 
-## Insert using Simple Statements and Prepared Statements ##
+### C -  Insert using Simple Statements and Prepared Statements
 
-Ex03
+- **✅  Exercice 3**
 
 In this exercise we are creating a new journey.
+
 Pay attention to the line where we are creating the journey id. For the purpose of the exercise, we are using a hard-coded time uuid for the journey ID. You can create your own, new one, but remember to update the details in the other exercise files. 
 
-Exercise 3 is using a SimpleStatement for the insert. See line 
+Exercise 3 is using a SimpleStatement for the insert. 
 
 To run:
 
-```
+```bash
 python Ex03_Insert_Journey.py 
 ```
 
-Expected output:
+*Expected output:*
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ python Ex03_Insert_Journey.py 
 ========================================
 Start exercise
@@ -99,19 +119,19 @@ Closing connection (up to 10s)
 ========================================
 ```
 
-Ex04
+- **✅ Exercice 4, preparing statements**
 
 Exercise 4 is explicitly preparing the statement.
 
 To run:
 
-```
+```bash
 python Ex04_TakeOff.py 
 ```
 
-Expected output:
+*Expected output:*
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ python Ex04_TakeOff.py 
 ========================================
 Start exercise
@@ -121,7 +141,9 @@ Success
 ========================================
 ```
 
-## Inserts using UDTs and Batches ##
+- **✅ Exercice 5: Inserts using UDTs and Batches**
+
+The table spacecraft_location_over_time is using a user-defined type, `location`.
 
 Although it is recommended to register your types with `Cluster.register_user_type()`, the driver gives you some options for working with unregistered UDTS.
 
@@ -134,7 +156,7 @@ https://docs.datastax.com/en/developer/python-driver/3.24/user_defined_types/
 We are using this simple method in this exercise. 
 See definition of the class `Location` here:
 
-```
+```python
 class Location(object):
     def __init__(self, x_coordinate, y_coordinate, z_coordinate):
         self.x_coordinate = x_coordinate
@@ -144,7 +166,7 @@ class Location(object):
 
 We then use it in one of the batch statements:
 
-```
+```python
         batch = BatchStatement()
         batch.add(prepared_insertLocation, [spacecraft_name, journey_id, Location(x,y,z),readingTime,'AU' ])
         batch.add(prepared_insertSpeed, [spacecraft_name, journey_id, speed,readingTime,'km/hour' ])
@@ -155,25 +177,25 @@ We then use it in one of the batch statements:
 
 and execute the batch here:
 
-```
+```python
         connection.session.execute(batch)
 ```
 
 Pay attention to the number of metrics we collect, and modify to your preference.
 
-```
+```python
 total = 1000
 ```
 
 to run Ex05:
 
-```
+```bash
 python Ex05_Travel.py 
 ```
 
-Expected output:
+*Expected output:*
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ python Ex05_Travel.py 
 0/1000 - Travelling..
 1/1000 - Travelling..
@@ -190,19 +212,17 @@ Reading saved for journey 230995ee-c697-11ea-b7a1-8c85907c08dd
 Success
 ```
 
-We run Exercise 6 to mark the journey as completed with an end time.
-
-Ex06
+- **✅ Exercice 6: mark the journey as completed with an end time.**
 
 To run:
 
-```
+```bash
 python Ex06_Landing.py
 ```
 
-Expected output:
+*Expected output:*
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ python Ex06_Landing.py 
 ========================================
 Start exercise
@@ -211,19 +231,17 @@ Success
 ```
 
 
-## Reads - Select all, by partition and with smaller page sizes ##
-
-Ex07
+- **✅ Exercice 7, Select all records from a table**
 
 To run:
 
-```
+```bash
 python Ex07_LstJourneys.py 
 ```
 
-Expected output:
+*Expected output:*
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ python Ex07_LstJourneys.py 
 ========================================
 Start exercise
@@ -233,17 +251,17 @@ Closing connection (up to 10s)
 ========================================
 ```
 
-Ex08
+- **✅ Exercice 8, Select by partition**
 
 To run:
 
-```
+```bash
 python Ex08_Read_Journey.py 
 ```
 
-Expected output:
+*Expected output:*
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ python Ex08_Read_Journey.py 
 ========================================
 Start exercise
@@ -259,17 +277,17 @@ Closing connection (up to 10s)
 ========================================
 ```
 
-Ex09
+- **✅ Exercice 9, Parsing records**
 
 To run:
 
-```
+```bash
 python Ex09_ReadMetrics.py 
 ```
 
-Expected output:
+*Expected output:*
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ python Ex09_ReadMetrics.py 
 ========================================
 Start exercise
@@ -289,17 +307,17 @@ Closing connection (up to 10s)
 ```
 
 
-Ex10
+- **✅ Exercice 10, Paging**
 
 To run:
 
-```
+```bash
 python Ex10_ReadMetrics_Paging.py 
 ```
 
-Expected output:
+*Expected output:*
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-python $ python Ex10_ReadMetrics_Paging.py 
 ========================================
 Start exercise
