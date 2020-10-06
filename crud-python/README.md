@@ -123,10 +123,15 @@ Success
 
 ## Inserts using UDTs and Batches ##
 
-The table spacecraft_location_over_time is using a user-defined type, location
+Although it is recommended to register your types with `Cluster.register_user_type()`, the driver gives you some options for working with unregistered UDTS.
 
-With the Node.js driver, you can retrieve and store UDTs using JavaScript objects.
+When you use prepared statements, the driver knows what data types to expect for each placeholder. This allows you to pass any object you want for a UDT, as long as it has attributes that match the field names for the UDT.
 
+Read more about working with UDTs in the driver documentation:
+
+https://docs.datastax.com/en/developer/python-driver/3.24/user_defined_types/
+
+We are using this simple method in this exercise. 
 See definition of the class `Location` here:
 
 ```
