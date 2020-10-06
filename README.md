@@ -166,9 +166,16 @@ describe tables;
 Expected output:
 
 ```
+KVUser@cqlsh:killrvideo> desc tables;
+
+spacecraft_journey_catalog     spacecraft_temperature_over_time
+spacecraft_pressure_over_time  spacecraft_location_over_time
+spacecraft_speed_over_time
 ```
 
-Perfect, this wraps up the database preparations. Launch Gitpod and start coding!
+Perfect, this wraps up the database preparations. 
+
+Launch Gitpod and start coding!
 
 [🏠 Back to Table of Contents](#table-of-contents)
 
