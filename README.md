@@ -1,4 +1,4 @@
-🎓🔥 CRUD operations with NodeJS and Python with Astra 🔥🎓
+# 🎓🔥 CRUD operations with NodeJS and Python with Astra 🔥🎓 #
 
 Welcome to the 'CRUD operations with NodeJS and Python with Astra' workshop! In this two-hour workshop, the Developer Advocate team of DataStax shows you the basics of connecting, updating and reading records from the powerful distributed NoSQL database Apache Cassandra. Using Astra, the cloud based Cassandra-as-a-Service platform delivered by DataStax, we will cover the very first steps for every developer who wants to try to learn a new database: CRUD operations. 
 
