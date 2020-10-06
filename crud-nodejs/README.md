@@ -1,5 +1,31 @@
 # NodeJS Workshop Exercises #
 
+## Download the bundle to securely connect to your Astra instance ##
+
+In the summary page of your Astra instance, select `connect` and then select the `Driver` connection method.
+
+Right-click on `Download Secure Connect Bundle` and save the link location to the clipboard
+
+<img width="1000" alt="Screenshot 2020-10-05 at 10 09 49" src="https://user-images.githubusercontent.com/20337262/95174774-739a5780-07b2-11eb-86d5-d504a42cf16b.png">
+
+Now in gitpod, navigate to the `crud-nodejs` folder and curl the connection bundle like here:
+
+```
+gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ curl -L "<your bundle link here>" > creds.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 12354  100 12354    0     0  28797      0 --:--:-- --:--:-- --:--:-- 28797
+```
+
+You should end up with a file `creds.zip` in the `crud-nodejs` directory.
+
+```
+gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ ls
+creds.zip         Ex02_Connect_to_Cassandra.js  Ex04_TakeOff.js  Ex06_Landing.js      Ex08_Read_Journey.js  Ex10_ReadMetrics_Paging.js  package.json       README.md
+db_connection.js  Ex03_Insert_Journey.js        Ex05_Travel.js   Ex07_ListJourney.js  Ex09_ReadMetrics.js   node_modules                package-lock.json
+```
+
+
 ## Install the Cassandra driver ##
 
 Ex00
@@ -14,7 +40,7 @@ Ex01: Modify the `db_connection.js` file with your credentials:
 
 ```
 // This is the Zip file you downloaded
-const SECURE_CONNECT_BUNDLE = '/workspace/crud-nodejs/creds.zip'
+const SECURE_CONNECT_BUNDLE = '/workspace/workshop-crud-with-python-and-node/crud-nodejs/creds.zip'
 // This is the username, recommended value was KVUser
 const USERNAME = "KVUser";
 // This is the password, recommended value was KVPassword
