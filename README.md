@@ -1,89 +1,93 @@
-# 🎓🔥 CRUD operations with NodeJS and Python with Astra 🔥🎓 #
+# 🎓🔥 CRUD operations with NodeJS and Python
 
-Welcome to the 'CRUD operations with NodeJS and Python with Astra' workshop! In this two-hour workshop, the Developer Advocate team of DataStax shows you the basics of connecting, updating and reading records from the powerful distributed NoSQL database Apache Cassandra. Using Astra, the cloud based Cassandra-as-a-Service platform delivered by DataStax, we will cover the very first steps for every developer who wants to try to learn a new database: CRUD operations. 
+[![License Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://gitpod.io/#https://github.com/DataStax-Academy/workshop-crud-with-python-and-node/)
+![version](https://img.shields.io/badge/version-0.0.1-blue)
+[![Discord](https://img.shields.io/discord/685554030159593522)](https://discord.com/widget?id=685554030159593522&theme=dark)
 
-It doesn't matter if you join our workshop live or you prefer to do at your own pace, we have you covered. In this repository, you'll find everything you need for this workshop:
+Welcome to the *CRUD operations with NodeJS and Python with Astra* workshop! In this two-hour workshop, the Developer Advocate team of DataStax shows you the basics of connecting, updating and reading records from the powerful distributed NoSQL database Apache Cassandra.
 
-- Materials used during presentations
-- Hands-on exercises
-- Workshop videos
-  - [First workshop](https://www.youtube.com/watch?v=3KsR59Y2_Uw) [NAM Time]
-  - [Second workshop](https://www.youtube.com/watch?v=axR9SHYnfMs) [IST Time]
-- [Discord chat](https://bit.ly/cassandra-workshop)
-- [Questions and Answers](https://community.datastax.com/)
+Using Astra, the cloud based Cassandra-as-a-Service platform delivered by DataStax, we will cover the very first steps for every developer who wants to try to learn a new database: **CRUD operations.**
+
+## Video Recordings 
+
+- 📺 [Wednesday, october 7th *(NAM Time)*](https://www.youtube.com/watch?v=3KsR59Y2_Uw)
+
+- 📺 [Thursday, october 8th *(IST Time)*](https://www.youtube.com/watch?v=axR9SHYnfMs)
+
 
 ## Table of Contents
 
-| Title  | Description
-|---|---|
-| **Slide deck** | [Slide deck for the workshop](slides/Presentation.pdf) |
-| **1. Create your Astra instance** | [Create your Astra instance](#1-create-your-astra-instance) |
-| **2. Execute CRUD operations with NodeJS** | [CRUD with NodeJS](crud-nodejs/README.md) |
-| **3. Execute CRUD operations with Python** | [CRUD with Python](crud-python/README.md) |
+1. [Database Setup **(ASTRA)**](1-setup-database) 
+2. [IDE Setup **(GITPOD)**](#2-setup-ide) 
+2. [Hands-on](#)
+    1. [Execute CRUD operations with **NodeJS**](crud-nodejs/README.md)
+    2. [Execute CRUD operations with **Python**](crud-python/README.md)
+3. [Materials](#)
+    1. [Ask Questions on community](https://community.datastax.com/)
+    2. [Join our Discord chat](https://bit.ly/cassandra-workshop)
+    2. [Get the Slides](slides/Presentation.pdf)
 
+## 1. Setup Database
 
-**✅  Open Gitpod** : [Gitpod](http://www.gitpod.io/?utm_source=datastax&utm_medium=referral&utm_campaign=datastaxworkshops) is an IDE 100% online based on Eclipse Theia. To initialize your environment simply click on the button below *(CTRL + Click to open in new tab)*
+To get started with a free-forever, zero-install Cassandra database **[click here](https://dtsx.io/workshop)** 🚀. 
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/DataStax-Academy/workshop-crud-with-python-and-node/)
+- **✅ Step 1a. SignIn** : 
 
+*expected output*
+![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/login-1000.png?raw=true)
 
-## 1. Create your Astra instance
+- **✅ Step 1b. You'll then be directed to the summary page. Locate the button `Add Database`**
 
-`ASTRA` service is available at url [https://astra.datastax.com](https://dtsx.io/workshop). `ASTRA` is the simplest way to run Cassandra with zero operations at all - just push the button and get your cluster. `Astra` offers **10 Gb Tier Free Forever** and you **don't need a credit card** or anything to sign-up and use it. 
+*expected output*
+![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-empty-1000.png?raw=true)
 
-**✅ Step 1a. Register (if needed) and Sign In to Astra** : You can use your `Github`, `Google` accounts or register with an `email`.
+- **✅ Step 1b. Choose the free plan and select your region**
 
-Make sure to chose a password with minimum 8 characters, containing upper and lowercase letters, at least one number and special character
+**Free tier**: 5GB storage, no obligation
 
-- [Registration Page](https://dtsx.io/workshop)
+**Region**: This is where your database will reside physically (choose one close to you or your users). For people in EMEA please use `europe-west-1`, idea here is to reduce latency.
 
-- [Authentication Page](https://dtsx.io/workshop)
-
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/login-1000.png?raw=true)
-
-
-**✅ Step 1b. Choose the free plan and select your region**
-
+*expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/choose-a-plan-1000-annotated.png?raw=true)
 
-- **Select the free tier**: 5GB storage, no obligation
+- **✅ Step 1c. Configure and create your database**
 
-- **Select the region**: This is the region where your database will reside physically (choose one close to you or your users). For people in EMEA please use `europe-west-1` idea here is to reduce latency.
+While Astra allows you to fill in these fields with values of your own choosing, please follow our reccomendations to make the rest of the exercises easier to follow. If you don't, you are on your own! :)
 
-**✅ Step 1c. Configure and create your database**
+- **Database name** - `killrvideocluster.` 
 
-You will find below which values to enter for each field.
+- **Keyspace name** - `killrvideo`
 
+- **Database User name (case sensitive)** - `KVUser`
+
+- **Password (case sensitive)** - `KVPassword1`. Fill in both the password and the confirmation fields.
+
+- **Create the database**. Click the `Create Database` button.
+
+*expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/create-and-configure-annotated-1000.png?raw=true)
-
-- **Fill in the database name** - `killrvideocluster.` While Astra allows you to fill in these fields with values of your own choosing, please follow our reccomendations to make the rest of the exercises easier to follow. If you don't, you are on your own! :)
-
-- **Fill in the keyspace name** - `killrvideo`. It's really important that you use the name killrvideo (with no 'e' in "killr") here in order for all the exercises to work well. We realize you want to be creative, but please just roll with this one today.
-
-- **Fill in the Database User name** - `KVUser`. Note the user name is case-sensitive. Please use the case we suggest here.
-
-- **Fill in the password** - `KVPassword1`. Fill in both the password and the confirmation fields. Note that the password is also case-sensitive. Please use the case we suggest here.
-
-- **Create the database**. Review all the fields to make sure they are as shown, and click the `Create Database` button.
 
 You will see your new database `pending` in the Dashboard.
 
+*expected output*
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-pending-1000.png?raw=true)
 
 The status will change to `Active` when the database is ready, this will only take 2-3 minutes. You will also receive an email address when it is ready.
 
-**✅ Step 1d. View your Database and connect**
+*expected output*
+![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-withdb-1000.png?raw=true)
+
+
+- **✅ Step 1d. View your Database and connect**
 
 Let’s review the database you have configured. Select your new database in the lefthand column.
 
-Now you can select to connect, to park the database, to access CQL console or Studio.
 
 ![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/summary-1000.png?raw=true)
 
 
-**✅ Step 1e. Connect via CQL console and insert schema**
-
-Ok, now that you have a database created the next step is to create a table to work with. 
+- **✅ Step 1e. Connect via CQL console**
 
 In the Summary screen for your database, select **_CQL Console_** from the top menu in the main window. This will take you to the CQL Console with a login prompt.
 
@@ -93,21 +97,24 @@ Enter in the credentials we used earlier to create the **_killrvideo_** database
 
 <img width="1000" alt="Screenshot 2020-09-30 at 13 53 43" src="https://user-images.githubusercontent.com/20337262/94687593-613c9b80-0324-11eb-8db8-35a76a786b18.png">
 
-Navigate to the keyspace you want to use for this exercise:
+- **✅ Step 1f. Create the schema**
 
-```
-use ...
+You are now logged to the Database. The prompt should look like `YourUser@cqlsh>`. 
+
+Navigate to the keyspace (you can have multiple keyspaces in the same database)
+
+```cql
+use <your_keyspace>
 ```
 
-Now insert the schema:
+Create the schema (tables, index, user-defined-type...):
 
-```
+```sql
 CREATE TYPE IF NOT EXISTS location_udt (
     x_coordinate double,
     y_coordinate double,
     z_coordinate double
 );
-
 
 CREATE TABLE IF NOT EXISTS spacecraft_journey_catalog (
     spacecraft_name text,
@@ -118,7 +125,6 @@ CREATE TABLE IF NOT EXISTS spacecraft_journey_catalog (
     summary text,
     PRIMARY KEY (spacecraft_name, journey_id)
 );
-
 
 CREATE TABLE IF NOT EXISTS spacecraft_pressure_over_time (
     spacecraft_name text,
@@ -159,13 +165,12 @@ CREATE TABLE IF NOT EXISTS spacecraft_location_over_time (
 
 Check that all tables were created:
 
-```
+```sql
 describe tables;
 ```
 
-Expected output:
-
-```
+*Expected output*
+```bash
 KVUser@cqlsh:killrvideo> desc tables;
 
 spacecraft_journey_catalog     spacecraft_temperature_over_time
@@ -173,9 +178,12 @@ spacecraft_pressure_over_time  spacecraft_location_over_time
 spacecraft_speed_over_time
 ```
 
-Perfect, this wraps up the database preparations. 
+## 2. Setup IDE
 
-Launch Gitpod and start coding!
+**✅  Open Gitpod** : [Gitpod](http://www.gitpod.io/?utm_source=datastax&utm_medium=referral&utm_campaign=datastaxworkshops) is an IDE 100% online based on Eclipse Theia. To initialize your environment simply click on the button below *(CTRL + Click to open in new tab)*
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/DataStax-Academy/workshop-crud-with-python-and-node/)
+
+💥💥💥
 
 [🏠 Back to Table of Contents](#table-of-contents)
-
