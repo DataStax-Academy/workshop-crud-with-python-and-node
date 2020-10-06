@@ -2,12 +2,15 @@
 from db_connection import Connection
 import datetime
 import uuid
+
 #Defining our journey
-journey_id = uuid.UUID('df8d5c9c-c696-11ea-a8a1-a6cacf7cb1a0')
+journey_id = uuid.UUID('230995ee-c697-11ea-b7a1-8c85907c08dd')
 spacecraft_name = 'Crew Dragon Endeavour,SpaceX'
+
 print("========================================")
 print("Start exercise")
-# this is a update statement in python
+
+# this is an update statement in python
 try:
     connection = Connection()
     connection.session.execute(

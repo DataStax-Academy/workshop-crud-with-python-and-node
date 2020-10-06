@@ -28,7 +28,9 @@ try:
     prepared_insertPressure = connection.session.prepare(insertPressure)
     prepared_insertLocation = connection.session.prepare(insertLocation)
 
-    for i in range (0,1000):
+    total = 1000
+    
+    for i in range (0,total):
         speed        = 300+i+random.randint(0,10)
         pressure     = random.randint(0,20)
         temperature  = random.randint(0,300)
@@ -38,7 +40,7 @@ try:
         readingTime = datetime.datetime.now()
 
         time.sleep(0.01)
-        print("{}/50 - Travelling..".format(i))
+        print("{}/{} - Travelling..".format(i, total))
 
         batch = BatchStatement()
         batch.add(prepared_insertLocation, [spacecraft_name, journey_id, Location(x,y,z),readingTime,'AU' ])
