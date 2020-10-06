@@ -114,7 +114,7 @@ Journey created : 84121060-c66e-11ea-a82e-f931183227ac
 SUCCESS
 ```
 
-- **✅ Exercice 4, preparing statements **
+- **✅ Exercice 4, preparing statements**
 
 To run:
 
@@ -216,10 +216,7 @@ Journey 84121060-c66e-11ea-a82e-f931183227ac has now landed
 SUCCESS
 ```
 
-
-## Reads - Select all, by partition and with smaller page sizes ##
-
-Ex07
+- **✅ Exercice 7, Select all, by partition and with smaller page sizes**
 
 To run:
 
@@ -237,7 +234,7 @@ Start exercise
 SUCCESS
 ```
 
-Ex08
+- **✅ Exercice 8**
 
 To run:
 
@@ -261,7 +258,8 @@ Journey has been found
 SUCCESS
 ```
 
-Ex09
+- **✅ Exercice 9**
+
 
 To run:
 
@@ -289,8 +287,7 @@ idx:999, time=2020-10-06T07:45:47.007Z, value=1300.4481347583946
 SUCCESS
 ```
 
-
-Ex10
+- **✅ Exercice 10**
 
 To run:
 
