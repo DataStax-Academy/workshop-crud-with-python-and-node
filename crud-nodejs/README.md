@@ -1,5 +1,13 @@
 ## Workshop Exercises ##
 
+## Install the Cassandra driver ##
+
+Ex00
+
+```
+npm install cassandra-driver
+```
+
 ## Set up the Connection with Astra ##
 
 Ex01: Modify the `db_connection.js` file with your credentials:
