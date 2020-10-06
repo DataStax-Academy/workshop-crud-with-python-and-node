@@ -1,4 +1,4 @@
-## Workshop Exercises ##
+# NodeJS Workshop Exercises #
 
 ## Install the Cassandra driver ##
 
