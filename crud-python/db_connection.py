@@ -3,7 +3,7 @@ from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
 # This is the Zip file you downloaded
-SECURE_CONNECT_BUNDLE = '/workspace/cassandra-workshop-series/week3-AppDev-crud/crud-python/creds.zip'
+SECURE_CONNECT_BUNDLE = '/workspace/workshop-crud-with-python-and-node/crud-python/creds.zip'
 # This is the username, recommended value was KVUser
 USERNAME = "KVUser";
 # This is the password, recommended value was KVPassword
