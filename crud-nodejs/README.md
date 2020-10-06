@@ -1,44 +1,65 @@
-# NodeJS Workshop Exercises #
+# 🎓🔥 CRUD operations with NodeJS and Python
 
-## Download the bundle to securely connect to your Astra instance ##
+[🏠 Return to HOME](https://github.com/DataStax-Academy/workshop-crud-with-python-and-node)
 
-In the summary page of your Astra instance, select `connect` and then select the `Driver` connection method.
+## Hands-on `NODEJS`
 
-Right-click on `Download Secure Connect Bundle` and save the link location to the clipboard
+### A - Download the bundle to securely connect to your Astra instance
 
+- **✅ Display the summary screen and locate the `connect` button.**
+
+![pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/summary-1000-connect.png?raw=true)
+
+- **✅ On the connect screen pick `drivers`**
+
+![pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/connect-rest-driver.png?raw=true)
+
+- **✅ Right-click on `Download Secure Connect Bundle` and save the link location to the clipboard`**
+
+*Driver page*
+![pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/connect-driver-1000.png?raw=true)
+
+*Get the link*
 <img width="1000" alt="Screenshot 2020-10-05 at 10 09 49" src="https://user-images.githubusercontent.com/20337262/95174774-739a5780-07b2-11eb-86d5-d504a42cf16b.png">
 
-Now in gitpod, navigate to the `crud-nodejs` folder and curl the connection bundle like here:
+- **✅ Now in gitpod, navigate to the `crud-nodejs` folder and curl the connection bundle like here:`**
 
+```bash
+curl -L "<your bundle link here>" > /workspace/workshop-crud-with-python-and-node/crud-nodejs/creds.zip
 ```
+
+*expected output*
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ curl -L "<your bundle link here>" > creds.zip
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100 12354  100 12354    0     0  28797      0 --:--:-- --:--:-- --:--:-- 28797
 ```
 
-You should end up with a file `creds.zip` in the `crud-nodejs` directory.
+You should end up with a file `creds.zip` in the `crud-nodejs` directory. It should be about **12kb**
 
-```
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ ls
 creds.zip         Ex02_Connect_to_Cassandra.js  Ex04_TakeOff.js  Ex06_Landing.js      Ex08_Read_Journey.js  Ex10_ReadMetrics_Paging.js  package.json       README.md
 db_connection.js  Ex03_Insert_Journey.js        Ex05_Travel.js   Ex07_ListJourney.js  Ex09_ReadMetrics.js   node_modules                package-lock.json
 ```
 
+### B -  Connect your application to Cassandra
 
-## Install the Cassandra driver ##
+- **✅ Install the Cassandra driver**
 
-Ex00
 
-```
+The `npm` package manager is already install in gitpod, as such you simply have to :
+
+```bash
 npm install cassandra-driver
 ```
 
-## Set up the Connection with Astra ##
+- **✅ Set up the Connection with Astra**
 
 Ex01: Modify the `db_connection.js` file with your credentials:
 
-```
+```javascript
 // This is the Zip file you downloaded
 const SECURE_CONNECT_BUNDLE = '/workspace/workshop-crud-with-python-and-node/crud-nodejs/creds.zip'
 // This is the username, recommended value was KVUser
@@ -49,19 +70,16 @@ const PASSWORD = "KVPassword1";
 const KEYSPACE = "spacecraft"; 
 ```
 
-## Test the Connection to Astra ##
+- **✅  Test the Connection to Astra**
 
-Ex02
+You simply have to run the test class `Ex02_Connect_to_Cassandra`:
 
-To run:
-
-```
+```bash
 node Ex02_Connect_to_Cassandra.js
 ```
 
-Expected output:
-
-```
+*Expected output*
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex02_Connect_to_Cassandra.js 
 ========================================
 Start exercise
@@ -70,24 +88,23 @@ Your are now connected to cluster 'caas-cluster'
 SUCCESS
 ```
 
+### C -  Insert using Simple Statements and Prepared Statements
 
-## Insert using Simple Statements and Prepared Statements ##
-
-Ex03
+- **✅  Exercice 3**
 
 In this exercise we are creating a new journey.
+
 Pay attention to the line where we are creating the journey id. For the purpose of the exercise, we are using a hard-coded time uuid for the journey ID. You can create your own, new one, but remember to update the details in the other exercise files. 
 
 Exercise 3 is using a SimpleStatement for the insert. See line 
 
 To run:
 
-```
+```bash
 node Ex03_Insert_Journey.js
 ```
 
-Expected output:
-
+*Expected output:*
 ```
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex03_Insert_Journey.js 
 ========================================
@@ -97,19 +114,16 @@ Journey created : 84121060-c66e-11ea-a82e-f931183227ac
 SUCCESS
 ```
 
-Ex04
-
-Exercise 4 is explicitly preparing the statement.
+- **✅ Exercice 4, preparing statements **
 
 To run:
 
-```
+```bash
 node Ex04_TakeOff.js
 ```
 
-Expected output:
-
-```
+*Expected output*
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex04_TakeOff.js 
 ========================================
 Start exercise
@@ -119,7 +133,8 @@ Journey 84121060-c66e-11ea-a82e-f931183227ac has now taken off
 SUCCESS
 ```
 
-## Inserts using UDTs and Batches ##
+
+- **✅ Exercice 5: Inserts using UDTs and Batches**
 
 The table spacecraft_location_over_time is using a user-defined type, location
 
@@ -127,28 +142,28 @@ With the Node.js driver, you can retrieve and store UDTs using JavaScript object
 
 See definition of object here:
 
-```
-        var location = {
-        x_coordinate: x,
-        y_coordinate: y,
-        z_coordinate: z
-        }
+```javascript
+var location = {
+   x_coordinate: x,
+   y_coordinate: y,
+   z_coordinate: z
+}
 ```
 
 We then use it in one of the batch statements:
 
-```
-        var myBatch = [
-        { query: insertSpeed, params: [spacecraft_name, journey_id, speed,readingTime,'km/hour' ] },
-        { query: insertTemperature, params: [spacecraft_name, journey_id, pressure, readingTime,'Pa' ] },
-        { query: insertPressure, params: [spacecraft_name, journey_id, temperature, readingTime,'K' ] },
-        { query: insertLocation, params: [spacecraft_name, journey_id, location,readingTime,'AU' ] }
-        ]
+```javascript
+var myBatch = [
+ { query: insertSpeed, params: [spacecraft_name, journey_id, speed,readingTime,'km/hour' ] },
+ { query: insertTemperature, params: [spacecraft_name, journey_id, pressure, readingTime,'Pa' ] },
+ { query: insertPressure, params: [spacecraft_name, journey_id, temperature, readingTime,'K' ] },
+ { query: insertLocation, params: [spacecraft_name, journey_id, location,readingTime,'AU' ] }
+]
 ```
 
 and execute the batch here:
 
-```
+```bash
 const result = await connection.client.batch(myBatch, { prepare: true })
 ```
 
@@ -160,12 +175,11 @@ var total = 1000
 
 to run Ex05:
 
-```
+```bash
 node Ex05_Travel.js
 ```
 
-Expected output:
-
+*Expected output*
 ```
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex05_Travel.js 
 ========================================
@@ -184,18 +198,15 @@ Reading saved for journey 84121060-c66e-11ea-a82e-f931183227ac
 ========================================
 ```
 
-We run Exercise 6 to mark the journey as completed with an end time.
-
-Ex06
+- **✅ Exercice 6: mark the journey as completed with an end time.**
 
 To run:
 
-```
+```bash
 node Ex06_Landing.js
 ```
 
-Expected output:
-
+*Expected output*
 ```
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex06_Landing.js 
 ========================================
@@ -212,12 +223,11 @@ Ex07
 
 To run:
 
-```
+```bash
 node Ex07_ListJourney.js 
 ```
 
-Expected output:
-
+*Expected output*
 ```
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex07_ListJourney.js 
 ========================================
@@ -231,13 +241,12 @@ Ex08
 
 To run:
 
-```
+```bash
 node Ex08_Read_Journey.js
 ```
 
-Expected output:
-
-```
+*Expected output*
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex08_Read_Journey.js 
 ========================================
 Start exercise
@@ -256,13 +265,12 @@ Ex09
 
 To run:
 
-```
+```bash
 node Ex09_ReadMetrics.js 
 ```
 
-Expected output:
-
-```
+*Expected output*
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex09_ReadMetrics.js 
 ========================================
 Start exercise
@@ -286,13 +294,12 @@ Ex10
 
 To run:
 
-```
+```bash
 node Ex10_ReadMetrics_Paging.js
 ```
 
-Expected output:
-
-```
+*Expected output*
+```bash
 gitpod /workspace/workshop-crud-with-python-and-node/crud-nodejs $ node Ex10_ReadMetrics_Paging.js 
 ========================================
 Start exercise
