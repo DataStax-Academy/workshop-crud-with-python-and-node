@@ -62,12 +62,12 @@ Ex01: Modify the `db_connection.py` file with your credentials:
 ```python
 # This is the Zip file you downloaded
 SECURE_CONNECT_BUNDLE = '/workspace/workshop-crud-with-python-and-node/crud-python/creds.zip'
-# This is the username, recommended value was KVUser
-USERNAME = "KVUser";
-# This is the password, recommended value was KVPassword
-PASSWORD = "KVPassword1";
-# This is the keyspace name, recommended value was killrvideo
-KEYSPACE = "killrvideo"; 
+# This is the username, recommended value was SUser
+USERNAME = "SUser";
+# This is the password, recommended value was SPassword1
+PASSWORD = "SPassword1";
+# This is the keyspace name, recommended value was spacecraft
+KEYSPACE = "spacecraft"; 
 ```
 
 - **✅  Test the Connection to Astra**
