@@ -55,13 +55,13 @@ To get started with a free-forever, zero-install Cassandra database **[click her
 
 While Astra allows you to fill in these fields with values of your own choosing, please follow our reccomendations to make the rest of the exercises easier to follow. If you don't, you are on your own! :)
 
-- **Database name** - `killrvideocluster.` 
+- **Database name** - `myastracluster.` 
 
-- **Keyspace name** - `killrvideo`
+- **Keyspace name** - `spacecraft`
 
-- **Database User name (case sensitive)** - `KVUser`
+- **Database User name (case sensitive)** - `SUser`
 
-- **Password (case sensitive)** - `KVPassword1`. Fill in both the password and the confirmation fields.
+- **Password (case sensitive)** - `SPassword1`. Fill in both the password and the confirmation fields.
 
 - **Create the database**. Click the `Create Database` button.
 
@@ -93,7 +93,7 @@ In the Summary screen for your database, select **_CQL Console_** from the top m
 
 <img width="1000" alt="Screenshot 2020-09-30 at 13 51 55" src="https://user-images.githubusercontent.com/20337262/94687448-2aff1c00-0324-11eb-8aa6-516185d01ce8.png">
 
-Enter in the credentials we used earlier to create the **_killrvideo_** database. If you followed the instructions earlier this should be **_KVUser_** and **_KVPassword1_**. If you already created the **_killrvideo_** database at some point before this workshop and used different credentials, just use those instead.
+Enter in the credentials we used earlier to create the **_spacecraft_** database. If you followed the instructions earlier this should be **_SUser_** and **_SPassword1_**. If you already created the your database at some point before this workshop and used different credentials, just use those instead.
 
 <img width="1000" alt="Screenshot 2020-09-30 at 13 53 43" src="https://user-images.githubusercontent.com/20337262/94687593-613c9b80-0324-11eb-8db8-35a76a786b18.png">
 
@@ -171,7 +171,7 @@ describe tables;
 
 *Expected output*
 ```bash
-KVUser@cqlsh:killrvideo> desc tables;
+KVUser@cqlsh:spacecraft> desc tables;
 
 spacecraft_journey_catalog     spacecraft_temperature_over_time
 spacecraft_pressure_over_time  spacecraft_location_over_time
