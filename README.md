@@ -55,7 +55,7 @@ To get started with a free-forever, zero-install Cassandra database **[click her
 
 While Astra allows you to fill in these fields with values of your own choosing, please follow our reccomendations to make the rest of the exercises easier to follow. If you don't, you are on your own! :)
 
-- **Database name** - `myastracluster.` 
+- **Database name** - `myastracluster` 
 
 - **Keyspace name** - `spacecraft`
 
