@@ -18,7 +18,7 @@ Using Astra, the cloud based Cassandra-as-a-Service platform delivered by DataSt
 
 ## Table of Contents
 
-1. [Database Setup **(ASTRA)**](1-setup-database) 
+1. [Database Setup **(ASTRA)**](#1-setup-database) 
 2. [IDE Setup **(GITPOD)**](#2-setup-ide) 
 2. [Hands-on](#)
     1. [Execute CRUD operations with **NodeJS**](crud-nodejs/README.md)
