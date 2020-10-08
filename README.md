@@ -104,7 +104,7 @@ You are now logged to the Database. The prompt should look like `YourUser@cqlsh>
 Navigate to the keyspace (you can have multiple keyspaces in the same database)
 
 ```cql
-use spacecraft
+use spacecraft;
 ```
 
 Create the schema (tables, index, user-defined-type...):
