@@ -35,7 +35,7 @@ To get started with a free-forever, zero-install Cassandra database **[click her
 - **✅ Step 1a. SignIn** : 
 
 *expected output*
-![Astra](<img src=“https://user-images.githubusercontent.com/1936716/103555190-7c63fd80-4e75-11eb-97d7-732d37969c40.png” width=“700” />)
+![Astra](<img src="https://user-images.githubusercontent.com/1936716/103555190-7c63fd80-4e75-11eb-97d7-732d37969c40.png" width=“700” />)
 
 - **✅ Step 1b. You'll then be directed to the summary page. Locate the button `Add Database`**
 
