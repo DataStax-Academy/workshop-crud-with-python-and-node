@@ -70,41 +70,36 @@ While Astra allows you to fill in these fields with values of your own choosing,
 - **Create the database**. Click the `Create Database` button.
 
 *expected output*
-<img src="" width=“700” />
+<img src="https://user-images.githubusercontent.com/1936716/103559170-56415c00-4e7b-11eb-8c9e-e3409e51b4e8.png" width=“700” />
 
 You will see your new database `pending` in the Dashboard.
 
 *expected output*
-<img src="" width=“700” />
+<img src="https://user-images.githubusercontent.com/1936716/103559267-78d37500-4e7b-11eb-8e84-669e925f88c6.png" width=“700” />
 
 The status will change to `Active` when the database is ready, this will only take 2-3 minutes. You will also receive an email address when it is ready.
 
 *expected output*
-<img src="" width=“700” />
+<img src="https://user-images.githubusercontent.com/1936716/103559322-90126280-4e7b-11eb-8bb8-b935bf74b0ae.png" width=“700” />
 
 
 - **✅ Step 1d. View your Database and connect**
 
 Let’s review the database you have configured. Select your new database in the lefthand column.
 
-<img src="" width=“700” />
+<img src="https://user-images.githubusercontent.com/1936716/103559452-c4861e80-4e7b-11eb-8cea-a28f3624b44f.png" width=“700” />
 
 
 - **✅ Step 1e. Connect via CQL console**
 
-In the Summary screen for your database, select **_CQL Console_** from the top menu in the main window. This will take you to the CQL Console with a login prompt.
+In the Summary screen for your database, select **_CQL Console_** from the top menu in the main window. This will take you to the CQL Console and log you in.
 
 
-<img src="" width=“700” />
-
-Enter in the credentials we used earlier to create the **_spacecraft_** database. If you followed the instructions earlier this should be **_SUser_** and **_SPassword1_**. If you already created the your database at some point before this workshop and used different credentials, just use those instead.
-
-
-<img src="" width=“700” />
+<img src="https://user-images.githubusercontent.com/1936716/103560763-f0a29f00-4e7d-11eb-82d5-febc37351136.png" width=“700” />
 
 - **✅ Step 1f. Create the schema**
 
-You are now logged to the Database. The prompt should look like `YourUser@cqlsh>`. 
+You are now logged to the Database. The prompt should look like `token@cqlsh>`. 
 
 Navigate to the keyspace (you can have multiple keyspaces in the same database)
 
