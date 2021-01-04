@@ -40,16 +40,20 @@ To get started with a free-forever, zero-install Cassandra database **[click her
 - **✅ Step 1b. You'll then be directed to the summary page. Locate the button `Add Database`**
 
 *expected output*
-![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-empty-1000.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103556066-d0bbad00-4e76-11eb-9f36-ce456bb12e57.png" width=“700” />
 
 - **✅ Step 1b. Choose the free plan and select your region**
 
 **Free tier**: 5GB storage, no obligation
 
+**Provider**: This will determine what cloud provider your database will run on
+
 **Region**: This is where your database will reside physically (choose one close to you or your users). For people in EMEA please use `europe-west-1`, idea here is to reduce latency.
 
+Once your values are selected click "Configure Database"
+
 *expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/choose-a-plan-1000-annotated.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103558072-ba632080-4e79-11eb-83e8-df49cf2c5243.png" width=“700” />
 
 - **✅ Step 1c. Configure and create your database**
 
@@ -66,36 +70,37 @@ While Astra allows you to fill in these fields with values of your own choosing,
 - **Create the database**. Click the `Create Database` button.
 
 *expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/create-and-configure-annotated-1000.png?raw=true)
+<img src="" width=“700” />
 
 You will see your new database `pending` in the Dashboard.
 
 *expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-pending-1000.png?raw=true)
+<img src="" width=“700” />
 
 The status will change to `Active` when the database is ready, this will only take 2-3 minutes. You will also receive an email address when it is ready.
 
 *expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-withdb-1000.png?raw=true)
+<img src="" width=“700” />
 
 
 - **✅ Step 1d. View your Database and connect**
 
 Let’s review the database you have configured. Select your new database in the lefthand column.
 
-
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/summary-1000.png?raw=true)
+<img src="" width=“700” />
 
 
 - **✅ Step 1e. Connect via CQL console**
 
 In the Summary screen for your database, select **_CQL Console_** from the top menu in the main window. This will take you to the CQL Console with a login prompt.
 
-<img width="1000" alt="Screenshot 2020-09-30 at 13 51 55" src="https://user-images.githubusercontent.com/20337262/94687448-2aff1c00-0324-11eb-8aa6-516185d01ce8.png">
+
+<img src="" width=“700” />
 
 Enter in the credentials we used earlier to create the **_spacecraft_** database. If you followed the instructions earlier this should be **_SUser_** and **_SPassword1_**. If you already created the your database at some point before this workshop and used different credentials, just use those instead.
 
-<img width="1000" alt="Screenshot 2020-09-30 at 13 53 43" src="https://user-images.githubusercontent.com/20337262/94687593-613c9b80-0324-11eb-8db8-35a76a786b18.png">
+
+<img src="" width=“700” />
 
 - **✅ Step 1f. Create the schema**
 
