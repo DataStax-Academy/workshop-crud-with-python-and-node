@@ -8,19 +8,19 @@
 
 - **✅ Display the summary screen and locate the `connect` button.**
 
-![pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/summary-1000-connect.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103561359-f9e03b80-4e7e-11eb-8fd8-9e205f835657.png" width=“700” />
 
-- **✅ On the connect screen pick `drivers`**
+- **✅ On the connect screen under the Connect using a driver header pick the language you want to use**
 
-![pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/connect-rest-driver.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103561489-34e26f00-4e7f-11eb-8365-4fe3044a5c77.png" width=“700” />
 
-- **✅ Right-click on `Download Secure Connect Bundle` and save the link location to the clipboard`**
+- **✅ Right-click on `Download Bundle` and save the link location to the clipboard`**
 
 *Driver page*
-![pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/connect-driver-1000.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103561739-8f7bcb00-4e7f-11eb-95bc-3976c801e5be.png" width=“700” />
 
 *Get the link*
-<img width="1000" alt="Screenshot 2020-10-05 at 10 09 49" src="https://user-images.githubusercontent.com/20337262/95174774-739a5780-07b2-11eb-86d5-d504a42cf16b.png">
+<img src="https://user-images.githubusercontent.com/1936716/103561876-d1a50c80-4e7f-11eb-86ba-5581bfe48ece.png" width=“700” />
 
 - **✅ Now in gitpod, navigate to the `crud-python` folder and curl the connection bundle like here:`**
 
