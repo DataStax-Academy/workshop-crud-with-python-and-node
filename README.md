@@ -184,6 +184,11 @@ spacecraft_speed_over_time
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/DataStax-Academy/workshop-crud-with-python-and-node/)
 
+Now it is time to pick your favorite language and go to the next step.
+
+[I want to use **NodeJS**](crud-nodejs/README.md)
+[I want to use **Python**](crud-python/README.md)
+
 💥💥💥
 
 [🏠 Back to Table of Contents](#table-of-contents)
