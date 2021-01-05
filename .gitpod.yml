@@ -4,7 +4,7 @@ image:
 tasks:
   - name: download clients
     init: |
-      npm install cassandra-driver && pip install cassandra-driver
+      cd crud-nodejs && npm install cassandra-driver && cd .. && pip install cassandra-driver && clear && echo "Welcome to the Workshop"
 ports:
   - port: 3000
     onOpen: open-browser
