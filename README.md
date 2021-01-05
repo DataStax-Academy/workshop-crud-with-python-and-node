@@ -9,13 +9,6 @@ Welcome to the *CRUD operations with NodeJS and Python with Astra* workshop! In 
 
 Using Astra, the cloud based Cassandra-as-a-Service platform delivered by DataStax, we will cover the very first steps for every developer who wants to try to learn a new database: **CRUD operations.**
 
-## Video Recordings 
-
-- 📺 [Wednesday, october 7th *(NAM Time)*](https://www.youtube.com/watch?v=3KsR59Y2_Uw)
-
-- 📺 [Thursday, october 8th *(IST Time)*](https://www.youtube.com/watch?v=axR9SHYnfMs)
-
-
 ## Table of Contents
 
 1. [Database Setup **(ASTRA)**](#1-setup-database) 
@@ -184,12 +177,12 @@ spacecraft_speed_over_time
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/DataStax-Academy/workshop-crud-with-python-and-node/)
 
-Now it is time to pick your favorite language and go to the next step.
+Now it is time to pick your favorite language. Click the the language you want to work with
 
-[I want to use **NodeJS**](crud-nodejs/README.md)
+| Logo | Your choice
+| - |---|
+| **![JAVASCRIPT](https://raw.githubusercontent.com/DataStax-Academy/cassandra-workshop-series/master/materials/images/logo-javascript.png)** | [I decide to use JAVASCRIPT](crud-nodejs/README.md) |
+| **![PYTHON](https://raw.githubusercontent.com/DataStax-Academy/cassandra-workshop-series/master/materials/images/logo-python.png)** | [I decide to use PYTHON](crud-python/README.md) |
 
-[I want to use **Python**](crud-python/README.md)
-
-💥💥💥
 
 [🏠 Back to Table of Contents](#table-of-contents)

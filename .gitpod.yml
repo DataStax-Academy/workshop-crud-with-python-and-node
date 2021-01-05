@@ -1,0 +1,26 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: download clients
+    init: |
+      npm install cassandra-driver && pip install cassandra-driver
+ports:
+  - port: 3000
+    onOpen: open-browser
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: false
+    addBadge: true
+    addLabel: false
+
+vscode:
+  extensions:
+    - magicstack.magicpython@1.1.1:Q+4h8/d9eu9kME/nNfIDlg==
+    
