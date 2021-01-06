@@ -19,7 +19,8 @@ Using Astra, the cloud based Cassandra-as-a-Service platform delivered by DataSt
 3. [Materials](#)
     1. [Ask Questions on community](https://community.datastax.com/)
     2. [Join our Discord chat](https://bit.ly/cassandra-workshop)
-    2. [Get the Slides](slides/Presentation.pdf)
+    3. [Get the Slides](https://github.com/DataStax-Academy/workshop-crud-with-python-and-node/blob/master/slides/Cloud%20Native%20Series%20week1%20-%20An%20Easy%20Backend%20for%20your%20application.pdf)
+    4. [Homework](https://community.datastax.com/questions/9897/materials-and-homework-for-week-1-of-the-cloud-nat.html)
 
 ## 1. Setup Database
 
