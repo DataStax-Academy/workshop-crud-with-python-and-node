@@ -9,13 +9,6 @@ Welcome to the *CRUD operations with NodeJS and Python with Astra* workshop! In 
 
 Using Astra, the cloud based Cassandra-as-a-Service platform delivered by DataStax, we will cover the very first steps for every developer who wants to try to learn a new database: **CRUD operations.**
 
-## Video Recordings 
-
-- 📺 [Wednesday, october 7th *(NAM Time)*](https://www.youtube.com/watch?v=3KsR59Y2_Uw)
-
-- 📺 [Thursday, october 8th *(IST Time)*](https://www.youtube.com/watch?v=axR9SHYnfMs)
-
-
 ## Table of Contents
 
 1. [Database Setup **(ASTRA)**](#1-setup-database) 
@@ -26,7 +19,8 @@ Using Astra, the cloud based Cassandra-as-a-Service platform delivered by DataSt
 3. [Materials](#)
     1. [Ask Questions on community](https://community.datastax.com/)
     2. [Join our Discord chat](https://bit.ly/cassandra-workshop)
-    2. [Get the Slides](slides/Presentation.pdf)
+    3. [Get the Slides](https://github.com/DataStax-Academy/workshop-crud-with-python-and-node/blob/master/slides/Cloud%20Native%20Series%20week1%20-%20An%20Easy%20Backend%20for%20your%20application.pdf)
+    4. [Homework](https://community.datastax.com/questions/9897/materials-and-homework-for-week-1-of-the-cloud-nat.html)
 
 ## 1. Setup Database
 
@@ -35,21 +29,25 @@ To get started with a free-forever, zero-install Cassandra database **[click her
 - **✅ Step 1a. SignIn** : 
 
 *expected output*
-![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/login-1000.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103555190-7c63fd80-4e75-11eb-97d7-732d37969c40.png" width=“700” />
 
 - **✅ Step 1b. You'll then be directed to the summary page. Locate the button `Add Database`**
 
 *expected output*
-![Astra](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-empty-1000.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103556066-d0bbad00-4e76-11eb-9f36-ce456bb12e57.png" width=“700” />
 
 - **✅ Step 1b. Choose the free plan and select your region**
 
 **Free tier**: 5GB storage, no obligation
 
+**Provider**: This will determine what cloud provider your database will run on
+
 **Region**: This is where your database will reside physically (choose one close to you or your users). For people in EMEA please use `europe-west-1`, idea here is to reduce latency.
 
+Once your values are selected click "Configure Database"
+
 *expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/choose-a-plan-1000-annotated.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103558072-ba632080-4e79-11eb-83e8-df49cf2c5243.png" width=“700” />
 
 - **✅ Step 1c. Configure and create your database**
 
@@ -66,40 +64,36 @@ While Astra allows you to fill in these fields with values of your own choosing,
 - **Create the database**. Click the `Create Database` button.
 
 *expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/create-and-configure-annotated-1000.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103559170-56415c00-4e7b-11eb-8c9e-e3409e51b4e8.png" width=“700” />
 
 You will see your new database `pending` in the Dashboard.
 
 *expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-pending-1000.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103559267-78d37500-4e7b-11eb-8e84-669e925f88c6.png" width=“700” />
 
-The status will change to `Active` when the database is ready, this will only take 2-3 minutes. You will also receive an email address when it is ready.
+The status will change to `Active` when the database is ready, this will only take 2-3 minutes. You will also receive an email when it is ready.
 
 *expected output*
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/dashboard-withdb-1000.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103559322-90126280-4e7b-11eb-8bb8-b935bf74b0ae.png" width=“700” />
 
 
 - **✅ Step 1d. View your Database and connect**
 
 Let’s review the database you have configured. Select your new database in the lefthand column.
 
-
-![my-pic](https://github.com/datastaxdevs/shared-assets/blob/master/astra/summary-1000.png?raw=true)
+<img src="https://user-images.githubusercontent.com/1936716/103559452-c4861e80-4e7b-11eb-8cea-a28f3624b44f.png" width=“700” />
 
 
 - **✅ Step 1e. Connect via CQL console**
 
-In the Summary screen for your database, select **_CQL Console_** from the top menu in the main window. This will take you to the CQL Console with a login prompt.
+In the Summary screen for your database, select **_CQL Console_** from the top menu in the main window. This will take you to the CQL Console and log you in.
 
-<img width="1000" alt="Screenshot 2020-09-30 at 13 51 55" src="https://user-images.githubusercontent.com/20337262/94687448-2aff1c00-0324-11eb-8aa6-516185d01ce8.png">
 
-Enter in the credentials we used earlier to create the **_spacecraft_** database. If you followed the instructions earlier this should be **_SUser_** and **_SPassword1_**. If you already created the your database at some point before this workshop and used different credentials, just use those instead.
-
-<img width="1000" alt="Screenshot 2020-09-30 at 13 53 43" src="https://user-images.githubusercontent.com/20337262/94687593-613c9b80-0324-11eb-8db8-35a76a786b18.png">
+<img src="https://user-images.githubusercontent.com/1936716/103560763-f0a29f00-4e7d-11eb-82d5-febc37351136.png" width=“700” />
 
 - **✅ Step 1f. Create the schema**
 
-You are now logged to the Database. The prompt should look like `YourUser@cqlsh>`. 
+You are now logged to the Database. The prompt should look like `token@cqlsh>`. 
 
 Navigate to the keyspace (you can have multiple keyspaces in the same database)
 
@@ -184,6 +178,12 @@ spacecraft_speed_over_time
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/DataStax-Academy/workshop-crud-with-python-and-node/)
 
-💥💥💥
+Now it is time to pick your favorite language. Click the the language you want to work with
+
+| Logo | Your choice
+| - |---|
+| **![JAVASCRIPT](https://raw.githubusercontent.com/DataStax-Academy/cassandra-workshop-series/master/materials/images/logo-javascript.png)** | [I decide to use JAVASCRIPT](crud-nodejs/README.md) |
+| **![PYTHON](https://raw.githubusercontent.com/DataStax-Academy/cassandra-workshop-series/master/materials/images/logo-python.png)** | [I decide to use PYTHON](crud-python/README.md) |
+
 
 [🏠 Back to Table of Contents](#table-of-contents)
