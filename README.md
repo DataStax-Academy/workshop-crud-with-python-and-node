@@ -71,7 +71,7 @@ You will see your new database `pending` in the Dashboard.
 *expected output*
 <img src="https://user-images.githubusercontent.com/1936716/103559267-78d37500-4e7b-11eb-8e84-669e925f88c6.png" width=“700” />
 
-The status will change to `Active` when the database is ready, this will only take 2-3 minutes. You will also receive an email address when it is ready.
+The status will change to `Active` when the database is ready, this will only take 2-3 minutes. You will also receive an email when it is ready.
 
 *expected output*
 <img src="https://user-images.githubusercontent.com/1936716/103559322-90126280-4e7b-11eb-8bb8-b935bf74b0ae.png" width=“700” />
